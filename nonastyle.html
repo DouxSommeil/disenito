@@ -186,7 +186,7 @@
         }
 
         .perfil {
-            display: flex;
+           display: contents;
             align-items: center;
             margin-bottom: 20px;
         }
@@ -235,7 +235,13 @@
           background-color: #7289da; }
         .vacio { background-color: #ddd; }
 </style>
-          <style>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video con Hover</title>
+    <style>
         /* Estilos básicos para el reproductor */
         #video-container {
             width: 640px;
@@ -251,10 +257,11 @@
             object-fit: cover;
         }
 
-        #video-container:hover #video-player {
+        body:hover #video-player {
             cursor: pointer;
         }
     </style>
+</head>
 <body>
 
     <div id="video-container">
@@ -268,13 +275,16 @@
         // JavaScript para controlar la reproducción del video
         const videoPlayer = document.getElementById('video-player');
 
-        document.getElementById('video-container').addEventListener('mouseenter', () => {
+        document.getElementById('body').addEventListener('mouseenter', () => {
             videoPlayer.play();
         });
 
-        document.getElementById('video-container').addEventListener('mouseleave', () => {
-         
+        document.getElementById('body').addEventListener('mouseleave', () => {
+           
         });
     </script>
+
+</body>
+</html>        
 <body>
   </html>
