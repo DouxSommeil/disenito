@@ -244,8 +244,8 @@
     <style>
         /* Estilos básicos para el reproductor */
         #video-container {
-            width: 640px;
-            height: 360px;
+            width: 50px;
+            height: 120px;
             position: relative;
             overflow: hidden;
             border: 2px solid #ccc;
@@ -275,11 +275,11 @@
         // JavaScript para controlar la reproducción del video
         const videoPlayer = document.getElementById('video-player');
 
-        document.getElementById('body').addEventListener('mouseenter', () => {
+        document.body.addEventListener('mouseenter', () => {
             videoPlayer.play();
         });
 
-        document.getElementById('body').addEventListener('mouseleave', () => {
+        document.body.addEventListener('mouseleave', () => {
            
         });
     </script>
