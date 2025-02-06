@@ -1,0 +1,239 @@
+<html>
+<head>
+  <title>Doux Sommeil</title>
+  <head>
+<body>
+         <div class="contenedor">
+        <div class="perfil">
+            <!-- Asegúrate de que la imagen sea cuadrada -->
+            <img src="https://xatimg.com/image/qRWwTdRhmrY4.jpg" alt="Avatar" class="imagen-circular">
+            <div class="texto-perfil">
+                <div class="text-container">
+    <div class="text">DouxSommeil</div>
+  </div>
+              <div class="aninumber">
+    <div class="number" id="numberDisplay">
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+        <span class="digit">4</span>
+    </div>
+  </div>
+               
+    
+      
+        
+        <div class="botones">
+            <button class="boton-circular married"></button>
+            <button class="boton-circular discord"><img src="//xatimg.com/image/OaiyYsuBzDRS.png"></button>
+            <button class="boton-circular vacio"></button>
+        </div>
+    </div>
+<script>const textContainer = document.querySelector('.text-container');
+    const textElement = document.querySelector('.text');
+    const symbols = ['✦︎']; // Símbolos alternados
+
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      
+      // Seleccionar símbolo aleatorio
+      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      sparkle.textContent = randomSymbol;
+
+      // Dimensiones del texto
+      const textRect = textElement.getBoundingClientRect();
+      
+      // Posición aleatoria dentro del texto + pequeño margen
+      const margin = 15;
+      const x = Math.random() * (textRect.width + margin * 2) - margin;
+      const y = Math.random() * (textRect.height + margin * 2) - margin;
+      
+      sparkle.style.left = `${x}px`;
+      sparkle.style.top = `${y}px`;
+
+      // Tamaño y rotación aleatorios
+      const size = Math.random() * 25 + 15; // 15px a 40px
+      sparkle.style.fontSize = `${size}px`;
+
+      textContainer.appendChild(sparkle);
+
+      // Eliminar después de la animación
+      setTimeout(() => sparkle.remove(), 1200);
+    }
+
+    // Crear destellos cada 80ms (más fluidos)
+    setInterval(createSparkle, 300);
+/// numeros aleatorios animacion
+ const finalNumber = '1550490712';
+        const digits = document.querySelectorAll('.digit');
+        const totalDigits = finalNumber.length;
+
+        function generateRandomDigit() {
+            return Math.floor(Math.random() * 10); // Genera un dígito aleatorio del 0 al 9
+        }
+
+        function displayRandomDigits() {
+            let currentIndex = 0;
+
+            const interval = setInterval(() => {
+                if (currentIndex < totalDigits) {
+                    // Cambia el dígito actual a un número aleatorio
+                    let randomDigit = generateRandomDigit();
+                    digits[currentIndex].textContent = randomDigit;
+
+                    // Verifica si el dígito aleatorio coincide con el dígito final
+                    if (randomDigit == finalNumber[currentIndex]) {
+                        // Si coincide, muestra el dígito final
+                        digits[currentIndex].textContent = finalNumber[currentIndex];
+                        currentIndex++; // Avanza al siguiente dígito
+                    }
+                } else {
+                    clearInterval(interval); // Detiene el intervalo cuando todos los dígitos han sido liberados
+                }
+            }, 100); // Cambia el número para ajustar la velocidad de cambio
+        }
+
+        // Inicia la animación
+        displayRandomDigits();
+
+</script>
+<style> 
+.aninumber {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            
+            font-size: 3em;
+        }
+        .number {
+            display: flex;
+        }
+        .digit {
+          font-size:11px;
+          font-family:Sans-Serif;
+            width: 1ch; /* Espacio para un carácter */
+            text-align: center;
+        }
+  
+/*CSS ANIMACION DEL NICK*/body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .text-container {
+      position: relative;
+      font-size: 48px;
+      width:100%;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      border-bottom:solid 2px #fff;
+    }
+
+    .text {
+      position: relative;
+      width:50%;
+      font-family: courier;
+      z-index: 1;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 8px;
+      filter: invert(30%);
+      text-shadow: 1px 1px 8px white;
+      opacity: 0;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+      0% {
+        opacity: 0;
+        transform: scale(0) ;
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) ;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0) ;
+      }
+    }
+ /* CSS DEL DISENO */
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+        }
+
+        .perfil {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .imagen-circular {
+            width: 120px; /* Asegúrate de que el ancho y alto sean iguales */
+            height: 120px;
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 3px solid #eee;
+            object-fit: cover; /* Recorta la imagen para que se ajuste al círculo */
+        }
+
+        .texto-perfil h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .texto-perfil p {
+            margin: 0;
+            color: #666;
+        }
+
+        .botones {
+          margin-top:10px;
+            display: flex;
+          justify-content: space-around;
+            gap: 15px;
+        }
+
+        .boton-circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .married { background-color: #ff6b6b; }
+        .discord { 
+ 
+
+          background-color: #7289da; }
+        .vacio { background-color: #ddd; }
+</style>
+<body>
+  </html>
