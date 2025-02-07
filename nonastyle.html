@@ -33,63 +33,54 @@
            <a href="https://xat.me/ffunniestt" target="_blank"> <button class="boton-circular married"><img width="48" height="48" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></button>
            </a> 
 <button class="boton-circular discord" onclick="copyID()">
-        <img src="https://img.icons8.com/doodle/48/discord-logo.png" alt="Discord ID" width="48" height="48">
+        <img src="https://img.icons8.com/doodle/48/discord-logo.png" alt="Discord ID" width="48" height="48"><span class="copied-text">Copied!</span>
     </button>
           <a href="https://www.ejemplo.com" target="_blank"> <button class="boton-circular vacio"><img width="48" height="48" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/></button>
           </a> </div>
     </div>
-          <style>
-        #notification {
-            display: none;
-            position: fixed;
+        <style>
+       .boton-circular {
+            position: relative;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .boton-circular img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .copied-text {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            z-index: 1000;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        #overlay {
+            font-size: 14px;
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 5px;
         }
-          
-        function copyID() {
+    </style>
+<script>
+        function copyID(button) {
             const id = "tzmar";
             navigator.clipboard.writeText(id).then(() => {
-                showNotification();
+                const copiedText = button.querySelector('.copied-text');
+                copiedText.style.display = 'block';
+
+                setTimeout(() => {
+                    copiedText.style.display = 'none';
+                }, 2000); // Mostrar "Copied!" durante 2 segundos
             }).catch(err => {
                 console.error('Error al copiar: ', err);
             });
         }
-</style>
-          <script>
-        function showNotification() {
-            const notification = document.getElementById('notification');
-            const overlay = document.getElementById('overlay');
-
-            // Mostrar el overlay y la notificación
-            overlay.style.display = 'block';
-            notification.style.display = 'block';
-
-            setTimeout(() => {
-                // Ocultar el overlay y la notificación
-                overlay.style.display = 'none';
-                notification.style.display = 'none';
-            }, 2000); // El recuadro se mostrará durante 2 segundos
-        }
-
+    </script>
             </script>
 <script>const textContainer = document.querySelector('.text-container');
     const textElement = document.querySelector('.text');
