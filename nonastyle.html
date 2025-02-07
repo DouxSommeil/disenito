@@ -30,11 +30,67 @@
       
         
         <div class="botones">
-            <button class="boton-circular married"></button>
-            <button class="boton-circular discord"><img src="//xatimg.com/image/OaiyYsuBzDRS.png"></button>
-            <button class="boton-circular vacio"></button>
-        </div>
+           <a href="https://xat.me/ffunniestt" target="_blank"> <button class="boton-circular married"><img width="48" height="48" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></button>
+           </a> 
+<button class="boton-circular discord" onclick="copyID()">
+        <img src="//xatimg.com/image/OaiyYsuBzDRS.png" alt="Discord ID" width="50" height="50">
+    </button>
+
+    <div id="overlay"></div>
+    <div id="notification">ID copied!</div>
+          <a href="https://www.ejemplo.com" target="_blank"> <button class="boton-circular vacio"><img width="48" height="48" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/></button>
+          </a> </div>
     </div>
+        #notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            z-index: 1000;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+          
+        function copyID() {
+            const id = "tzmar";
+            navigator.clipboard.writeText(id).then(() => {
+                showNotification();
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            const overlay = document.getElementById('overlay');
+
+            // Mostrar el overlay y la notificación
+            overlay.style.display = 'block';
+            notification.style.display = 'block';
+
+            setTimeout(() => {
+                // Ocultar el overlay y la notificación
+                overlay.style.display = 'none';
+                notification.style.display = 'none';
+            }, 2000); // El recuadro se mostrará durante 2 segundos
+        }
+
 <script>const textContainer = document.querySelector('.text-container');
     const textElement = document.querySelector('.text');
     const symbols = ['✦︎']; // Símbolos alternados
@@ -296,89 +352,6 @@
             <li><a href="#luciana">Luciana</a></li>
         </ol>
     </div>
-    <style>
-
-        .lista-container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        .lista-elegante {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .lista-elegante li {
-            margin: 0;
-        }
-
-        .lista-elegante li a {
-            text-decoration: none;
-            color: #2f3031;
-            font-size: 12px;
-            display: inline-block;
-            transition: opacity 0.5s ease;
-        }
-
-        /* Animación al hacer hover */
-        .lista-elegante li a.animate {
-            animation: growAndDisappear 1.5s ease forwards;
-        }
-
-        @keyframes growAndDisappear {
-            0% {
-                font-size: 2px;
-                opacity: 1;
-            }
-            33% {
-                font-size: 12px;
-                opacity: 1;
-            }
-            66% {
-                font-size: 36px;
-                opacity: 1;
-            }
-            100% {
-                font-size: 36px;
-                opacity: 0;
-            }
-        }
-    </style>
-    <script>
-        // Seleccionar todos los enlaces
-        const links = document.querySelectorAll('.lista-elegante li a');
-
-        // Función para manejar el hover
-        function handleHover(event) {
-            const link = event.target;
-
-            // Si la animación ya se ejecutó, no hacer nada
-            if (link.classList.contains('animate')) return;
-
-            // Agregar la clase para iniciar la animación
-            link.classList.add('animate');
-
-            // Eliminar la clase después de que la animación termine
-            setTimeout(() => {
-                link.classList.remove('animate');
-            }, 1500); // Duración de la animación en milisegundos
-        }
-
-        // Añadir el evento hover a cada enlace
-        links.forEach(link => {
-            link.addEventListener('mouseenter', handleHover);
-        });
-    </script>
 </body>
 </body>
 </html>        
