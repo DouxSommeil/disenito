@@ -60,10 +60,17 @@
             transform: translate(-50%, -50%);
             color: white;
             font-size: 14px;
-            display: none;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 5px;
             padding: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .copied-text.show {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 <script>
@@ -71,10 +78,10 @@
             const id = "tzmar";
             navigator.clipboard.writeText(id).then(() => {
                 const copiedText = button.querySelector('.copied-text');
-                copiedText.style.display = 'block';
+                copiedText.classList.add('show');
 
                 setTimeout(() => {
-                    copiedText.style.display = 'none';
+                    copiedText.classList.remove('show');
                 }, 2000); // Mostrar "Copied!" durante 2 segundos
             }).catch(err => {
                 console.error('Error al copiar: ', err);
