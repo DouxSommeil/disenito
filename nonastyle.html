@@ -33,7 +33,7 @@
            <a href="https://xat.me/ffunniestt" target="_blank"> <button class="boton-circular married"><img width="48" height="48" src="https://img.icons8.com/fluency/48/pixel-heart.png" alt="pixel-heart"/></button>
            </a> 
 <button class="boton-circular discord" onclick="copyID()">
-        <img src="//xatimg.com/image/OaiyYsuBzDRS.png" alt="Discord ID" width="50" height="50">
+        <img src="//xatimg.com/image/OaiyYsuBzDRS.png" alt="Discord ID" width="48" height="48">
     </button>
 
     <div id="overlay"></div>
@@ -41,6 +41,7 @@
           <a href="https://www.ejemplo.com" target="_blank"> <button class="boton-circular vacio"><img width="48" height="48" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/></button>
           </a> </div>
     </div>
+          <style>
         #notification {
             display: none;
             position: fixed;
@@ -75,7 +76,8 @@
                 console.error('Error al copiar: ', err);
             });
         }
-
+</style>
+          <scritp>
         function showNotification() {
             const notification = document.getElementById('notification');
             const overlay = document.getElementById('overlay');
@@ -90,7 +92,7 @@
                 notification.style.display = 'none';
             }, 2000); // El recuadro se mostrará durante 2 segundos
         }
-
+          </scritp>
 <script>const textContainer = document.querySelector('.text-container');
     const textElement = document.querySelector('.text');
     const symbols = ['✦︎']; // Símbolos alternados
